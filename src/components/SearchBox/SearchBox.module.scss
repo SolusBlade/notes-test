@@ -1,0 +1,37 @@
+.box{
+    display: flex;
+    justify-content: space-between;
+    background-color: #D3D3D3;
+    padding: 5px;
+    border-bottom: 1px solid #777777;
+}
+
+.btnWrap{
+    display: flex;
+    gap: 5px;
+}
+
+.icon{
+    fill: #777777;
+    margin: auto;
+}
+
+.btn{
+    background-color: #FAFAFA;
+    border: none;
+    border-radius: 2px;
+    padding: 2px 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 1px 2px rgba(105, 105, 105, 0.5);
+    cursor: pointer;
+    &:not(:disabled):hover,
+    &:not(:disabled):focus{
+        background-color: #ebebeb;
+    }
+    &:disabled{
+        cursor: default;
+        background-color: #e2e2e2;
+    }
+}

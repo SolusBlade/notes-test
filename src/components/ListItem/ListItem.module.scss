@@ -1,0 +1,25 @@
+.item{
+    padding: 10px 20px;
+    border-bottom: 1px solid #777777;
+    border-right: 1px solid #777777;
+    &:hover,
+    &:focus{
+        background-color: #D3D3D3;
+        cursor: pointer;
+    }
+}
+.currentItem{
+    background-color: #D3D3D3;
+}
+.title{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.text{
+    font-size: 14px;
+}
+
+.date{
+    margin-right: 5px;
+}
