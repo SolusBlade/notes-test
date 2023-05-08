@@ -4,7 +4,8 @@ import { useContext } from "react";
 import Context from "../../services/Context";
 
 const SearchBox = () => {
-	const { currentNote, hendleAddNote, removeNote } = useContext(Context);
+	const { currentNote, hendleAddNote, removeNote, setQuery } =
+    useContext(Context);
 	
 	return (
     <div className={s.box}>
@@ -31,9 +32,20 @@ const SearchBox = () => {
           />
         </button>
       </div>
-      <label>
-        <Icon name={'icon-search'} width={20} height={20} className={s.icon} />
-        <input name="search" type="text" />
+      <label className={s.searchBox}>
+        <Icon
+          name={'icon-search'}
+          width={16}
+          height={16}
+          className={`${s.icon} ${s.searchIcon}`}
+        />
+        <input
+          className={s.search}
+          name="search"
+          type="text"
+          placeholder="Search"
+          onChange={e => setQuery(e.target.value.trim())}
+        />
       </label>
     </div>
   );

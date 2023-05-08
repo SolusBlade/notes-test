@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { nanoid } from 'nanoid';
 
-const API_KEY = 'dcNmkoiM9dUzOfAW_cNG5_';
-export const APP_ID = 'dcPdXeWQ9jo4kAW6OkdCkP';
-export const ENTITY_ID = 'clseFdS8nbW4yDW6fop8on';
-export const FIELD_ID = 'cBxSoAm8noW4eNW5WYrujK';
+const API_KEY = 'dcImk9WOfcP40tywRdLSoU';
+export const APP_ID = 'brvmkyWQbcoOkjW47cQmk3';
+export const ENTITY_ID = 'ddV24MWPnkvQbAWQ3dKgfA';
+export const FIELD_ID = 'c2W7fIW59dJRPpWP55W7H_';
 axios.defaults.baseURL = 'https://quintadb.com/apps';
 
 const note = {
@@ -12,6 +11,12 @@ const note = {
     entity_id: ENTITY_ID,
     [FIELD_ID]: " ",
   },
+};
+
+const updateNote = (value) => {
+  return {values: {
+    [FIELD_ID]: value,
+  }}
 };
 
 export const getAllNotesApi = () => {
@@ -51,9 +56,9 @@ export const removeNoteApi = (id) => {
     .then(r => r.data);
 };
 
-export const updateNoteApi = (id, updatedNote) => {
+export const updateNoteApi = (id, updatedValue) => {
   return axios
-    .put(`${APP_ID}/dtypes/${id}.json`, updatedNote, {
+    .put(`${APP_ID}/dtypes/${id}.json`, updateNote(updatedValue), {
       params: {
         rest_api_key: API_KEY,
       },

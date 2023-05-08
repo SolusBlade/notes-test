@@ -35,3 +35,24 @@
         background-color: #e2e2e2;
     }
 }
+.searchBox{
+    position: relative;
+}
+
+.searchIcon{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+
+.search{
+    outline: none;
+    border: 1px solid #777777;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    padding-left: 28px;
+    &::placeholder{
+
+    }
+}

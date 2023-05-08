@@ -10,7 +10,7 @@ const ListItem = ({ item }) => {
   const contentRef = useRef(null);
   const { currentNote, setCurrentNote } = useContext(Context);
   
-  const { created_at: date, values, id } = item;
+  const { updated_at: date, values, id } = item;
 
   const formattedDate = formatDate(date);
   let title = '';
@@ -27,9 +27,14 @@ const ListItem = ({ item }) => {
     <li
       className={clsx(s.item, currentNote?.id === id && s.currentItem)}
       ref={contentRef}
-      onClick={() => setCurrentNote(item)}
+      onClick={() =>
+        setCurrentNote({
+          ...item,
+          values: { [FIELD_ID]: values[FIELD_ID] ? values[FIELD_ID] : '' },
+        })
+      }
     >
-      <strong className={s.title}>{title}</strong>
+      <strong className={s.title}>{trimStr(title)}</strong>
       <p className={s.text}>
         <span className={s.date}>{formattedDate}</span>
         <span className={s.content}>{trimStr(content)}</span>
