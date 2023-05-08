@@ -5,11 +5,13 @@ import { splitText, trimStr} from '../../services/formatText';
 import s from './ListItem.module.scss';
 import Context from '../../services/Context';
 import clsx from 'clsx';
+import { useMediaQuery } from 'react-responsive';
 
 const ListItem = ({ item }) => {
   const contentRef = useRef(null);
   const { currentNote, setCurrentNote } = useContext(Context);
-  
+  const isMob = useMediaQuery({ query: '(max-width: 767px)' });
+
   const { updated_at: date, values, id } = item;
 
   const formattedDate = formatDate(date);
@@ -22,7 +24,6 @@ const ListItem = ({ item }) => {
     content = c;
   }
 
-
   return (
     <li
       className={clsx(s.item, currentNote?.id === id && s.currentItem)}
@@ -34,10 +35,10 @@ const ListItem = ({ item }) => {
         })
       }
     >
-      <strong className={s.title}>{trimStr(title)}</strong>
+      <strong className={s.title}>{trimStr(title, isMob ? 20 : 30)}</strong>
       <p className={s.text}>
         <span className={s.date}>{formattedDate}</span>
-        <span className={s.content}>{trimStr(content)}</span>
+        <span className={s.content}>{trimStr(content, isMob ? 20 : 30)}</span>
       </p>
     </li>
   );

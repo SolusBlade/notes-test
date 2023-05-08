@@ -6,7 +6,7 @@ import Context from "../../services/Context";
 const SearchBox = () => {
 	const { currentNote, hendleAddNote, removeNote, setQuery } =
     useContext(Context);
-	
+  
 	return (
     <div className={s.box}>
       <div className={s.btnWrap}>

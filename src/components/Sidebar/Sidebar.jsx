@@ -6,6 +6,7 @@ import Context from '../../services/Context';
 const Sidebar = () => {
   const { filterNotes } = useContext(Context);
   const filteredNotes = filterNotes();
+
   return (
     <ul className={s.sidebar}>
       {filteredNotes

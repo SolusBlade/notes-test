@@ -14,12 +14,21 @@
 .title{
     display: block;
     margin-bottom: 5px;
+    @media screen and (max-width: 450px) {
+        font-size: 12px;
+    }
 }
 
 .text{
     font-size: 14px;
+    @media screen and (max-width: 450px) {
+       font-size: 12px; 
+    }
 }
 
 .date{
     margin-right: 5px;
+    @media screen and (max-width: 450px) {
+       font-size: 12px; 
+    }
 }

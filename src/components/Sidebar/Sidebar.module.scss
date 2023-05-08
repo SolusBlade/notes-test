@@ -1,6 +1,6 @@
 .sidebar {
   position: relative;
-  height: calc(100vh - 37px);
+  height: calc(100vh - 39px);
   padding: 0;
   margin: 0;
   width: 300px;
@@ -17,4 +17,8 @@
   &::-webkit-scrollbar-track {
     background: transparent;
   }
+  @media screen and (max-width: 450px) {
+        width: 150px;
+        height: calc(100vh - 73px);
+    }
 }

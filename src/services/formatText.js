@@ -1,7 +1,7 @@
-export const splitText = (text) => {
-    if (text === " ") return
-    const punctuationIndex = text.search(/[.,;:?!]/);
-    
+export const splitText = text => {
+  if (text === ' ') return;
+  const punctuationIndex = text.search(/[.,;:?!]/);
+
   let title, content;
   if (punctuationIndex !== -1) {
     title = text.substring(0, punctuationIndex).trim();
@@ -28,14 +28,14 @@ export const splitText = (text) => {
   }
 
   return { title, content };
-}
+};
 
-export const trimStr = (str) => {
- if (str.length > 30) {
-   return str.slice(0, 30) + '...';
- }
- return str;
-}
+export const trimStr = (str, number) => {
+  if (str.length > number) {
+    return str.slice(0, number) + '...';
+  }
+  return str;
+};
 
 export const formatDateInNote = dateString => {
   const date = new Date(dateString);

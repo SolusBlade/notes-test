@@ -21,7 +21,8 @@ function App() {
   }, []);
 
   const filterNotes = () => {
-    return notes.filter(({ values }) => values[FIELD_ID].startsWith(query));
+    if (!query) return notes;
+    return notes.filter(({ values }) => values[FIELD_ID]?.startsWith(query));
   }
 
   const hendleUpdateNote = (id, newValue) => {
